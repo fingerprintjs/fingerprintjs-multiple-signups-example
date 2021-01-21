@@ -1,0 +1,21 @@
+{
+  "name": "fpjs-video-project",
+  "version": "0.1.0",
+  "description": "A simple app to showcase FingerprintJS setup process and functionality",
+  "main": "index.js",
+  "author": "Boris Lobanov",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "pg": "^8.5.1"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.7"
+  }
+}
