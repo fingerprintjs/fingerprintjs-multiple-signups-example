@@ -32,19 +32,15 @@
   }))
 
 // routes
-  app.get('/', function (req, res, next) {
-    res.render('main', {layout: 'index', content: 'Hello world!'})
-  })
-
   app.get('/signup', function (req, res, next) {
     res.render('signup', {layout: 'index'})
   })
 
 // signup form submission
   app.post('/signup', async function signup(req, res, next) {
-    try {
-      const {email} = req.body
+    const {email} = req.body
 
+    try {
       if (!email) {
         throw new Error('email is required')
       }
@@ -62,7 +58,7 @@
         message = 'User with this email already exists'
       }
 
-      res.render('signup', {layout: 'index', error: message})
+      res.render('signup', {layout: 'index', error: message, email})
     }
   })
 

@@ -28,16 +28,7 @@ a:hover {
   background-color: #ffffff;
   border: 1px solid #DADEE0;
   padding: 25px 15px;
-  margin-bottom: 1.3rem;
   height: 60px;
-}
-
-.form-control:focus {
-  color: #000000;
-  background-color: #ffffff;
-  border: 3px solid #2c6ff8;
-  outline: 0;
-  box-shadow: none;
 }
 
 .signup-form {

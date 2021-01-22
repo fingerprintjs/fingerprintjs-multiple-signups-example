@@ -1,6 +1,5 @@
-create table users (
+CREATE TABLE users (
    id serial primary key,
-   email text not null,
-   created_at timestamp default now(),
-   unique (email)
+   email text not null unique,
+   created_at timestamp default now()
 );
