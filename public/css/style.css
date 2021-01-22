@@ -1,0 +1,105 @@
+body {
+  background: #F5F7F8;
+  font-family: 'Poppins', sans-serif;
+}
+
+h2 {
+  padding-top: 1.5rem;
+}
+
+a {
+  color: #0C57FB;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #8dadf4;
+}
+
+.container {
+  max-width: 1440px;
+}
+
+.logo {
+  margin-left: 8.333333%;
+}
+
+.form-control {
+  background-color: #ffffff;
+  border: 1px solid #DADEE0;
+  padding: 25px 15px;
+  height: 60px;
+}
+
+.signup-form {
+  margin-top: 40px;
+}
+
+.card {
+  border-radius: 20px;
+  box-shadow: 0 0 2px rgba(9, 36, 51, 0.08), 0 4px 16px rgba(9, 36, 51, 0.04);
+}
+
+.card-title {
+  padding-top: 0;
+  margin-bottom: 16px;
+}
+
+.card-body {
+  padding: 60px;
+}
+
+.card-footer {
+  font-size: 0.875rem;
+}
+
+.signup-form-content {
+  margin-top: 64px;
+}
+
+.signup-button-wrapper {
+  margin-top: 40px;
+}
+
+.signup-button {
+  width: 100%;
+  color: #ffffff;
+  padding: 0.6rem 1.2rem;
+  background: #0C57FB;
+  height: 60px;
+  border-radius: 53px;
+}
+
+.signup-button:hover {
+  background-color: #8dadf4;
+  transition: .3s;
+}
+
+.promo-container, .signup-success {
+  margin-top: 56px;
+}
+
+.promo-header {
+  margin-bottom: 40px;
+  line-height: 48px;
+  padding-top: 0;
+}
+
+.promo-text {
+  font-size: 18px;
+  line-height: 32px;
+}
+
+.auth-switcher-text {
+  color: #5F717A;
+  margin-bottom: 32px;
+}
+
+.accent {
+  color: #0C57FB;
+}
+
+.conditions {
+  margin-top: 24px;
+  color: #5F717A;
+}

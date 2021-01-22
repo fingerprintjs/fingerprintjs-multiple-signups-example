@@ -1,0 +1,58 @@
+<div class="signup-form container">
+  <div class="logo">
+    <img src="/images/logo.svg">
+  </div>
+  <div class="row signup-form-content">
+    <div class="col-md-4 offset-md-1">
+      <div class="promo-container">
+        <h2 class="promo-header">
+          Gain free access to <span class="accent">over 9,000
+            courses</span> for 14 days!
+        </h2>
+        <div class="promo-text">
+          <p>Learn coding, design, illustration, music production, video editing and tons of other things at
+            e-learning.com.
+            We have literally hundreds of thousands of hours of content created by some of the best instructors in the world,
+            who are experts in their fields.</p>
+          <p><strong class="accent">Start learning today!</strong></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-5 offset-md-1">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Sign up for free</h2>
+          <p class="auth-switcher-text">Already have an account? <a href="#">Sign in</a></p>
+
+          <form method="POST" action="/signup">
+            <div class="form-group">
+              <input
+                required
+                type="email"
+                class="form-control {{#if error}}is-invalid{{/if}}"
+                id="email"
+                name="email"
+                placeholder="Email"
+                value="{{#if email}}{{email}}{{/if}}"
+              >
+              {{#if error}}
+              <div class="invalid-feedback">
+                {{ error }}
+              </div>
+              {{/if}}
+            </div>
+            <div class="signup-button-wrapper text-center">
+              <button class="btn btn-primary signup-button">Create Account</button>
+            </div>
+          </form>
+          <div class="conditions">
+            By signing up, you agree to our
+            <a href="#">Terms and Conditions</a>
+            and the
+            <a href="#">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
