@@ -45,7 +45,7 @@
         throw new Error('email is required')
       }
 
-      const result = await client.query('INSERT INTO users(email) VALUES($1) RETURNING *', [email])
+      const result = await client.query('insert into users(email) values($1) returning *', [email])
       console.log(`${result.rows[0].email} added to the db`)
 
       res.render('signup_success', {layout: 'index'})
