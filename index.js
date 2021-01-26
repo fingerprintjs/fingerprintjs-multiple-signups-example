@@ -33,19 +33,25 @@
 
 // routes
   app.get('/signup', function (req, res, next) {
-    res.render('signup', {layout: 'index'})
+    res.render('signup', {layout: 'index', fpjsToken: process.env.FPJS_TOKEN})
   })
 
 // signup form submission
   app.post('/signup', async function signup(req, res, next) {
-    const {email} = req.body
+    const {email, visitorId} = req.body
 
     try {
       if (!email) {
         throw new Error('email is required')
       }
 
-      const result = await client.query('insert into users(email) values($1) returning *', [email])
+      const hasVisitorId = (await client.query('select * from users where visitor_id = $1', [visitorId])).rows.length > 0
+
+      if (hasVisitorId) {
+        throw new Error('Looks like you already have an account, please sign in')
+      }
+
+      const result = await client.query('insert into users(email, visitor_id) values($1, $2) returning *', [email, visitorId])
       console.log(`${result.rows[0].email} added to the db`)
 
       res.render('signup_success', {layout: 'index'})
@@ -58,7 +64,7 @@
         message = 'User with this email already exists'
       }
 
-      res.render('signup', {layout: 'index', error: message, email})
+      res.render('signup', {layout: 'index', fpjsToken: process.env.FPJS_TOKEN, error: message, email})
     }
   })
 
