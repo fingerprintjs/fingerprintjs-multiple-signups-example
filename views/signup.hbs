@@ -40,6 +40,8 @@
                 {{ error }}
               </div>
               {{/if}}
+
+              <input hidden type="text" id="visitorId" name="visitorId" value="">
             </div>
             <div class="signup-button-wrapper text-center">
               <button class="btn btn-primary signup-button">Create Account</button>
@@ -56,3 +58,19 @@
     </div>
   </div>
 </div>
+
+<script>
+  function initFingerprintJS() {
+    FingerprintJS.load({token: '{{fpjsToken}}'})
+      .then(fp => fp.get())
+      .then(result => {
+        console.log(result.visitorId)
+        document.getElementById('visitorId').value = result.visitorId
+      });
+  }
+</script>
+<script
+  async
+  src="https://cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs-pro@3/dist/fp.min.js"
+  onload="initFingerprintJS()"
+></script>
