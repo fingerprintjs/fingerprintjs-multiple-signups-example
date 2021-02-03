@@ -1,5 +1,6 @@
 # Multiple signup demo
-Code example used in the tutorial video for preventing multiple signups with FingerprintJS.
+Code example used in the tutorial video for preventing multiple signups with FingerprintJS. 
+Watch the [video tutorial](https://www.youtube.com/watch?v=jWX9P5_jZn8).
 
 ## How to run locally
 1. Clone the repository and open the project folder.
