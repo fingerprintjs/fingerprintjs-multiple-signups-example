@@ -64,7 +64,7 @@
         message = 'User with this email already exists'
       }
 
-      res.render('signup', {layout: 'index', fpjsToken: process.env.FPJS_TOKEN, error: message, email})
+      res.render('signup', {layout: 'index', fpjsPublicApiKey: process.env.FPJS_PUBLIC_API_KEY, error: message, email})
     }
   })
 
