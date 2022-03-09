@@ -33,7 +33,7 @@
 
 // routes
   app.get('/signup', function (req, res, next) {
-    res.render('signup', {layout: 'index', fpjsToken: process.env.FPJS_TOKEN})
+    res.render('signup', {layout: 'index', fpjsPublicApiKey: process.env.FPJS_PUBLIC_API_KEY})
   })
 
 // signup form submission
