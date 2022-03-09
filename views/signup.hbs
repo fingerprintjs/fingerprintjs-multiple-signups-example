@@ -61,7 +61,7 @@
 
 <script>
   function initFingerprintJS() {
-    FingerprintJS.load({token: '{{fpjsToken}}'})
+    FingerprintJS.load({apiKey: '{{fpjsPublicApiKey}}'})
       .then(fp => fp.get())
       .then(result => {
         console.log(result.visitorId)
