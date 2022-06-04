@@ -6,7 +6,8 @@
   "author": "Boris Lobanov",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "migrate": "node-pg-migrate"
   },
   "dependencies": {
     "bootstrap": "^4.6.0",
@@ -16,6 +17,7 @@
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
+    "node-pg-migrate": "^6.2.1",
     "nodemon": "^2.0.7"
   }
 }
