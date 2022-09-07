@@ -20,7 +20,7 @@ services:
       - ./.env
     environment:
       - DATABASE_URL=postgres://user:password@db:5432/my-db
-      - FPJS_PUBLIC_API_KEY=CK5UEus8zD8TtDfeTkqT
+      - FPJS_PUBLIC_API_KEY=xvhZPKdgMGsWwPDgKbYO
     volumes:
       - type: bind
         source: .
