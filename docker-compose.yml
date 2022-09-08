@@ -18,9 +18,6 @@ services:
     restart: unless-stopped
     env_file:
       - ./.env
-    environment:
-      - DATABASE_URL=postgres://user:password@db:5432/my-db
-      - FPJS_PUBLIC_API_KEY=xvhZPKdgMGsWwPDgKbYO
     volumes:
       - type: bind
         source: .
