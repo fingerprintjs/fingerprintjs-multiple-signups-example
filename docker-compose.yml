@@ -1,0 +1,30 @@
+# Docker Compose file Reference (https://docs.docker.com/compose/compose-file/)
+version: '3.7'
+
+services:
+  db:
+    restart: unless-stopped
+    image: postgres:12-alpine
+    environment:
+      POSTGRES_DB: 'my-db'
+      POSTGRES_USER: 'user'
+      POSTGRES_PASSWORD: 'password'
+    ports:
+      - '5433:5432'
+
+  api:
+    hostname: my-api
+    image: node:12
+    restart: unless-stopped
+    env_file:
+      - ./.env
+    volumes:
+      - type: bind
+        source: .
+        target: /home/my-api
+    working_dir: /home/my-api
+    ports:
+      - '3002:3002'
+    command: bash -c "yarn && yarn migrate up && yarn start"
+    depends_on:
+      - db

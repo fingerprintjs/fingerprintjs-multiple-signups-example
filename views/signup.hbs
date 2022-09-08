@@ -60,17 +60,14 @@
 </div>
 
 <script>
-  function initFingerprintJS() {
-    FingerprintJS.load({apiKey: '{{fpjsPublicApiKey}}'})
-      .then(fp => fp.get())
-      .then(result => {
-        console.log(result.visitorId)
-        document.getElementById('visitorId').value = result.visitorId
-      });
-  }
+  // Initialize the agent at application startup.
+  const fpPromise = import('https://fpcdn.io/v3/{{fpjsPublicApiKey}}')
+    .then(FingerprintJS => FingerprintJS.load())
+
+  // Get the visitor identifier when you need it.
+  fpPromise
+    .then(fp => fp.get())
+    .then(result => {
+      document.getElementById('visitorId').value = result.visitorId
+    })
 </script>
-<script
-  async
-  src="https://cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs-pro@3/dist/fp.min.js"
-  onload="initFingerprintJS()"
-></script>
